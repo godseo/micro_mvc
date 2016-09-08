@@ -54,7 +54,7 @@ class Auto_load
 	protected function loadClassMap($namespace,$class)
 	{
 		
-		
+		//todo::the next step add class_map function
 		$key = rtrim($namespace,'\\');
 		var_dump($this->prefix[$key]);
 		if(isset($this->prefix[$key]) === false)
