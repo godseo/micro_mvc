@@ -10,12 +10,14 @@ class Auto_load
 	 * namespace load array
 	 * @var array
 	 */
+
     protected $prefix = [
         'micro\controller' => CPATH,
         'micro\model' => MPATH,
         'micro\view' => VPATH ,
         'micro\system' => SYSPATH
     ];
+
 
 	/**
 	 * namespace queue list create
@@ -38,16 +40,18 @@ class Auto_load
 		while (false !== $pos = strrpos($prefix, '\\')) {
 			// retain the trailing namespace separator in the prefix
 			// var_dump($pos);
-            echo $prefix = substr($class, 0, $pos + 1);
+             $prefix = substr($class, 0, $pos + 1);
+
 //            echo '<br />';
             // the rest is the relative class name
-            echo $relative_class = substr($class, $pos + 1);
+             $relative_class = substr($class, $pos + 1);
             $mapfile = $this->loadClassMap($prefix,$relative_class);
-            var_dump($mapfile);
+//            var_dump($mapfile);
             if($mapfile)
             {
             	$this->get_file($mapfile) ;
                 break;
+
             }
 			echo '<br />';
 			 $prefix = rtrim($prefix,'\\');
@@ -61,6 +65,7 @@ class Auto_load
 		
 		//todo::the next step add class_map function
 		$key = rtrim($namespace,'\\');
+
 //		var_dump($namespace,$key,$this->prefix[$key]);
 		if(isset($this->prefix[$key]))
 		{

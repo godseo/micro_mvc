@@ -1,5 +1,6 @@
 <?php
- ini_set('display_error',1);
+ini_set('display_error',1);
+
 /**
  * define framework path const var
  */
@@ -14,6 +15,8 @@ define("VPATH",ROOTPATH.DIRECTORY_SEPARATOR.'view'.DIRECTORY_SEPARATOR);
 require SYSPATH.'Auto_load.php';
 $autoload = new \micro\system\Auto_load();
 $autoload->register();
+
 //$sd = new \micro\controller\Test\sss\aaa();
 $sd = new \micro\controller\Test();
-var_dump($sd);
+//var_dump($sd);
+

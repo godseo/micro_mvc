@@ -10,6 +10,6 @@ class Base_model
 {
     public function __construct()
     {
-        echo 'model inti';
+        echo 'model init'.PHP_EOL;
     }
 }
